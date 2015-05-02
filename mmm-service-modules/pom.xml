@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>net.sf.m-m-m</groupId>
+    <artifactId>mmm-service</artifactId>
+    <version>dev</version>
+  </parent>
+  <artifactId>mmm-service-modules</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId}</name>
+  <description>The actual modules of mmm-service.</description>
+
+  <modules>
+    <module>../mmm-service-api</module>
+    <module>../mmm-service-base</module>
+    <module>../mmm-service-impl-gwt</module>
+    <module>../mmm-service-impl-spring</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>mmm-util-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- BOM of mmm-util -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>mmm-service-bom</artifactId>
+        <version>${net.sf.mmm.service.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+</project>
