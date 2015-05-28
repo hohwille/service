@@ -4,7 +4,7 @@
   <parent>
     <groupId>net.sf.m-m-m</groupId>
     <artifactId>mmm-service-modules</artifactId>
-    <version>dev</version>
+    <version>dev-SNAPSHOT</version>
     <relativePath>../mmm-service-modules/pom.xml</relativePath>
   </parent>
   <artifactId>mmm-service-api</artifactId>

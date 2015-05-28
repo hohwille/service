@@ -9,7 +9,7 @@
     <relativePath>../mmm-parent/pom.xml</relativePath>
   </parent>
   <artifactId>mmm-service</artifactId>
-  <version>dev</version>
+  <version>dev-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>${project.artifactId}</name>
   <description>Simple light-weight services</description>
