@@ -8,31 +8,31 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.mmm.service.base.gwt.RemoteInvocationGenericServiceGwt;
-import net.sf.mmm.service.base.rpc.GenericRemoteInvocationRpcService;
-import net.sf.mmm.service.base.rpc.GenericRemoteInvocationRpcRequest;
-import net.sf.mmm.service.base.rpc.GenericRemoteInvocationRpcResponse;
-
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
+import net.sf.mmm.service.base.gwt.RemoteInvocationGenericServiceGwt;
+import net.sf.mmm.service.base.rpc.GenericRemoteInvocationRpcRequest;
+import net.sf.mmm.service.base.rpc.GenericRemoteInvocationRpcResponse;
+import net.sf.mmm.service.base.rpc.GenericRemoteInvocationRpcService;
+
 /**
  * This is the {@link RemoteServiceServlet} that implements the {@link RemoteInvocationGenericServiceGwt}
  * using <code>spring-webmvc</code> in order to allow context and dependency-injection (CDI). The actual
  * implementation for {@link #callServices(GenericRemoteInvocationRpcRequest)} is delegated to an
  * {@link #setGenericService(GenericRemoteInvocationRpcService) injected} implementation - by default
- * {@link net.sf.mmm.service.impl.rpc.server.GenericRemoteInvocationRpcServiceImpl} but can be changed by overriding
- * the spring XML configuration.
- * 
+ * {@link net.sf.mmm.service.impl.rpc.server.GenericRemoteInvocationRpcServiceImpl} but can be changed by
+ * overriding the spring XML configuration.
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
 @Named("RemoteInvocationGenericServiceServlet")
-public class RemoteInvocationGenericServiceServlet extends RemoteServiceServlet implements
-    RemoteInvocationGenericServiceGwt, Controller, ServletContextAware {
+public class RemoteInvocationGenericServiceServlet extends RemoteServiceServlet
+    implements RemoteInvocationGenericServiceGwt, Controller, ServletContextAware {
 
   /** UID for serialization. */
   private static final long serialVersionUID = -7334030062127266096L;
@@ -92,7 +92,6 @@ public class RemoteInvocationGenericServiceServlet extends RemoteServiceServlet 
    * @param genericService is the genericService to set
    */
   @Inject
-  @Named(GenericRemoteInvocationRpcService.CDI_NAME)
   public void setGenericService(GenericRemoteInvocationRpcService genericService) {
 
     this.genericService = genericService;

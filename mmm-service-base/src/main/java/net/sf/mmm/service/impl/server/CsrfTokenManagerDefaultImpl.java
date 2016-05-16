@@ -4,18 +4,17 @@ package net.sf.mmm.service.impl.server;
 
 import java.util.UUID;
 
-import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import net.sf.mmm.service.api.CsrfToken;
 import net.sf.mmm.service.api.DefaultCsrfToken;
 import net.sf.mmm.service.base.server.AbstractCsrfTokenManager;
 import net.sf.mmm.service.base.server.CsrfTokenManager;
-
-import org.springframework.web.context.request.RequestAttributes;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
  * This is the default implementation of {@link CsrfTokenManager}. It generates a {@link java.util.UUID}
@@ -23,7 +22,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-@Named(CsrfTokenManager.CDI_NAME)
 public class CsrfTokenManagerDefaultImpl extends AbstractCsrfTokenManager {
 
   /**

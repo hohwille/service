@@ -6,20 +6,18 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Method;
 
-import javax.inject.Named;
-
 import net.sf.mmm.service.api.Login;
 import net.sf.mmm.service.base.server.RemoteInvocationSecurityDetector;
 import net.sf.mmm.util.component.base.AbstractComponent;
 
 /**
  * This is the default implementation of {@link RemoteInvocationSecurityDetector}.
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-@Named(RemoteInvocationSecurityDetector.CDI_NAME)
-public class RemoteInvocationSecurityDetectorImpl extends AbstractComponent implements RemoteInvocationSecurityDetector {
+public class RemoteInvocationSecurityDetectorImpl extends AbstractComponent
+    implements RemoteInvocationSecurityDetector {
 
   /**
    * The constructor.
@@ -47,7 +45,7 @@ public class RemoteInvocationSecurityDetectorImpl extends AbstractComponent impl
   /**
    * This method gets the default value for {@link #isSecured(AnnotatedElement)} if no annotation or other
    * hint was found. This implementation returns <code>true</code>. Override to change.
-   * 
+   *
    * @return the default value for {@link #isSecured(AnnotatedElement)}.
    */
   protected boolean isSecuredByDefault() {
@@ -98,10 +96,10 @@ public class RemoteInvocationSecurityDetectorImpl extends AbstractComponent impl
 
   /**
    * Checks for {@link #isLogin(AnnotatedElement)} by naming convention.
-   * 
+   *
    * @see #LOGIN_METHOD_NAME
    * @see #LOGIN_COMMAND_NAME
-   * 
+   *
    * @param operation - see {@link #isLogin(AnnotatedElement)}.
    * @return <code>true</code> if the given <code>operation</code> is a login operation due to naming
    *         convention, <code>false</code> otherwise.

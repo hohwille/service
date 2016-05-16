@@ -5,14 +5,12 @@ package net.sf.mmm.service.impl.rpc.server;
 import java.util.concurrent.Callable;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import net.sf.mmm.service.base.GenericRemoteInvocationTransactionalCalls;
 import net.sf.mmm.service.base.GenericRemoteInvocationTransactionalResults;
 import net.sf.mmm.service.base.rpc.GenericRemoteInvocationRpcCall;
 import net.sf.mmm.service.base.rpc.GenericRemoteInvocationRpcRequest;
 import net.sf.mmm.service.base.rpc.GenericRemoteInvocationRpcResponse;
-import net.sf.mmm.service.base.rpc.GenericRemoteInvocationRpcService;
 import net.sf.mmm.service.base.server.AbstractGenericRemoteInvocationService;
 import net.sf.mmm.transaction.api.TransactionExecutor;
 import net.sf.mmm.util.component.api.ResourceMissingException;
@@ -24,7 +22,6 @@ import net.sf.mmm.util.component.api.ResourceMissingException;
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-@Named(GenericRemoteInvocationRpcService.CDI_NAME)
 public class GenericRemoteInvocationRpcServiceImpl extends AbstractGenericRemoteInvocationRpcService {
 
   /** @see #getTransactionExecutor() */

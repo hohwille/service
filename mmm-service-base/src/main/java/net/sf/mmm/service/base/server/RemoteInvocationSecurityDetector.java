@@ -10,17 +10,14 @@ import net.sf.mmm.util.component.api.ComponentSpecification;
  * This is the interface for a detector that can decide if a
  * {@link net.sf.mmm.service.api.RemoteInvocationCall} {@link #isSecured(AnnotatedElement) is secured} or
  * {@link #isLogin(AnnotatedElement) a login operation}.
- * 
+ *
  * @see CsrfTokenManager#generateInitialToken()
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
 @ComponentSpecification
 public interface RemoteInvocationSecurityDetector {
-
-  /** The {@link net.sf.mmm.util.component.api.Cdi#CDI_NAME CDI name}. */
-  String CDI_NAME = "net.sf.mmm.service.base.server.RemoteInvocationSecurityDetector";
 
   /**
    * The name of {@link net.sf.mmm.service.api.rpc.RemoteInvocationService} {@link java.lang.reflect.Method}
@@ -43,7 +40,7 @@ public interface RemoteInvocationSecurityDetector {
    * {@link net.sf.mmm.service.api.RemoteInvocationCall} will be considered as secured if annotated with
    * {@link javax.annotation.security.RolesAllowed} and will not be secured if annotated with
    * {@link javax.annotation.security.PermitAll}.
-   * 
+   *
    * @param operation is the {@link AnnotatedElement} to check. In case of a
    *        {@link net.sf.mmm.service.api.command.RemoteInvocationCommand} this will be the command class, in
    *        case of a {@link net.sf.mmm.service.api.rpc.RemoteInvocationService} operation this will be the
@@ -57,7 +54,7 @@ public interface RemoteInvocationSecurityDetector {
    * technically possible to have multiple login operations. However, for simplicity this should be avoided if
    * possible. A regular implementation should honor the {@link net.sf.mmm.service.api.Login} annotation as
    * well as conventions such as a {@link #LOGIN_METHOD_NAME} and {@link #LOGIN_COMMAND_NAME}.
-   * 
+   *
    * @param operation is the {@link AnnotatedElement} to check. In case of a
    *        {@link net.sf.mmm.service.api.command.RemoteInvocationCommand} this will be the command class, in
    *        case of a {@link net.sf.mmm.service.api.rpc.RemoteInvocationService} operation this will be the

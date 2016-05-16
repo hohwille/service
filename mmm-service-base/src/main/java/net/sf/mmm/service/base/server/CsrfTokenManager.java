@@ -15,9 +15,6 @@ import net.sf.mmm.util.lang.api.concern.Security;
 @ComponentSpecification
 public interface CsrfTokenManager extends Security {
 
-  /** The {@link net.sf.mmm.util.component.api.Cdi#CDI_NAME CDI name}. */
-  String CDI_NAME = "net.sf.mmm.service.base.server.XsrfTokenManager";
-
   /**
    * Checks if the given {@link CsrfToken} that has been sent from the client is valid. This method has to
    * correspond to {@link #generateInitialToken()} and {@link #generateUpdateToken(CsrfToken)}. In case a
@@ -53,7 +50,8 @@ public interface CsrfTokenManager extends Security {
    * <li>A token is generated from a combination of different aspects (e.g. user login, user agent,
    * server-secret, etc.) and digitally signed an encrypted. This approach can also be used in situations
    * where no server-side HTTP session exists (e.g. with only HTTP Basic Authentication) as the
-   * {@link #isValidToken(CsrfToken) validation} can decrypt the token, split the aspects and verify them.</li>
+   * {@link #isValidToken(CsrfToken) validation} can decrypt the token, split the aspects and verify them.
+   * </li>
    * </ul>
    * In case you create your own implementation be aware of the following things:
    * <ul>
