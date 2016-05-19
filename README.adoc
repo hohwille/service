@@ -1,0 +1,11 @@
+= Mature Modular Meta-framework (mmm)
+
+image:https://raw.github.com/m-m-m/mmm/master/src/site/resources/images/logo.png[logo]
+
+== Welcome to the wonderful world of http://m-m-m.sourceforge.net/index.html[mmm]
+
+== mmm-service
+
+image:https://travis-ci.org/m-m-m/service.svg?branch=master["build-status",link="https://travis-ci.org/m-m-m/service"]
+
+The `mmm-service` project is part of is part of link:../../..#mmm[mmm] and brings a service framework to port any Java inerface to different service protocols.

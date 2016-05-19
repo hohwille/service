@@ -6,7 +6,7 @@
     <groupId>net.sf.m-m-m</groupId>
     <artifactId>mmm-service-modules</artifactId>
     <version>dev-SNAPSHOT</version>
-    <relativePath>../mmm-service-modules/pom.xml</relativePath>
+    <relativePath>../modules/pom.xml</relativePath>
   </parent>
   <artifactId>mmm-service-impl-spring</artifactId>
   <version>${net.sf.mmm.service.version}</version>
