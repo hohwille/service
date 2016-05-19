@@ -13,10 +13,10 @@
   <description>The actual modules of mmm-service.</description>
 
   <modules>
-    <module>../mmm-service-api</module>
-    <module>../mmm-service-base</module>
-    <module>../mmm-service-impl-gwt</module>
-    <module>../mmm-service-impl-spring</module>
+    <module>../api</module>
+    <module>../base</module>
+    <module>../impl-gwt</module>
+    <module>../impl-spring</module>
   </modules>
 
   <dependencies>
